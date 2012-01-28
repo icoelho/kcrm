@@ -1,0 +1,21 @@
+defaults: &defaults
+  #host: Staff.mongohq.com
+  #port: 10050
+  #username: iac
+  #password: iac
+  #database: academia
+  host: ds029277.mongolab.com
+  port: 29277
+  username: iac
+  password: iac
+  database: dojo
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *dafaults
+

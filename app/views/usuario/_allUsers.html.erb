@@ -1,0 +1,20 @@
+<% @usuarios.each do |message| %>
+        
+        <div id="msg">
+	<div id="msg_name">
+		<%= message.id %>
+	</div>
+	<div id="msg_name">
+		<%= message.nome %>
+	</div>
+	<div id='msg_text'>
+		<%= message.status %>
+	</div>
+	<div id='msg_text'>
+		<%= message.dataacesso %>
+	</div>
+	
+        </div>
+        
+<% end %>
+

@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>sworm - Free CSS Template by spyka Webmaster</title>
+<%= stylesheet_link_tag    "styles" %>
+<!--
+sworm, a free CSS web template by spyka Webmaster (www.spyka.net)
+
+Download: http://www.spyka.net/web-templates/sworm/
+
+License: Creative Commons Attribution
+//-->
+</head>
+<body>
+<div id="container">
+    <%= render  "layouts/header" %>
+
+    <div id="nav">
+	<%= render  "layouts/menu" %>
+    </div>
+    <div id="body">
+	
+	<div id="content">
+            <p>
+		<a href="javascript:" onclick="history.go(-1); return false">Voltar</a> |
+	    </p>           
+            <h3>Associado</h3>   
+
+	<fieldset>
+               <form action="/associado/update" method="post" id="saveform">
+		
+		       <input name="associadoid" id="associadoid" value="<%= @associado.id %>" type="hidden" />
+		    
+			<p>
+			  <label for="nome">Nome:</label><br>
+			  <input name="nome" id="nome" value="<%= @associado.nome %>" type="text" size="100" maxlength="100" />
+			</p>
+		    
+			<p>
+			  <label for="endereco">Endereco:</label><br>
+			  <input name="endereco" id="endereco" value="<%= @associado.endereco %>" type="text" size="100" maxlength="100"  />
+			</p>
+		    
+			<p>
+			  <label for="bairro">Bairro:</label><br>
+			  <input name="bairro" id="bairro" value="<%= @associado.bairro %>" type="text"  size="100" maxlength="100" />
+			</p>
+		    
+			<p>
+			  <label for="cep">CEP:</label><br>
+			  <input name="cep" id="cep" value="<%= @associado.cep %>" type="text" />
+			</p>
+
+			<p>
+			  <label for="municipio">Cidade:</label><br>
+			  <input name="municipio" id="municipio" value="<%= @associado.municipio %>" type="text"  size="100" maxlength="100" />
+		    
+			</p>
+		    
+			<p>
+			  <label for="uf">Estado:</label><br>
+			  <input name="uf" id="uf" value="<%= @associado.uf %>" type="text" />
+			</p>
+		    
+			<p>
+			  <label for="telefone">Telefone:</label><br>
+			  <input name="telefone" id="telefone" value="<%= @associado.telefones %>" type="text"  size="100" maxlength="100" />
+			</p>
+		    
+			<p>
+			  <label for="email">Email:</label><br>
+			  <input name="email" id="email" value="<%= @associado.email %>" type="text"  size="100" maxlength="100" />
+			</p>
+
+
+			<h4>Nascimento</h4>
+			<p>
+			  <label for="nascdata">Data:</label><br>
+			  <input name="nascdata" id="nascdata" value="<%= @associado.datanascimento %>" type="text" />
+			</p>
+		    
+			<p>
+			  <label for="nascmunicipio">Cidade:</label><br>
+			  <input name="nascmunicipio" id="nascmunicipio" value="<%= @associado.municipionascimento %>" type="text" />
+			</p>
+		    
+			<p>
+			  <label for="nascestado">Estado:</label><br>
+			  <input name="nascestado" id="nascestado" value="<%= @associado.ufnascimento %>" type="text" />
+			</p>
+		    
+			<h4>Documenta&ccedil;&atilde;o</h4>
+			<p>
+			  <label for="rg">RG:</label><br>
+			  <input name="rg" id="rg" value="<%= @associado.rg %>" type="text" />
+			</p>
+    
+			<p>
+			  <label for="cpf">CPF:</label><br>
+			  <input name="cpf" id="cpf" value="<%= @associado.cpf %>" type="text" />
+		    	</p>
+		     
+			<h4>Confedera&ccedil;&atilde;o / Federa&ccedil;&atilde;o JUDO</h4>
+			<p>
+			  <label for="regcbj">Registro CBJ:</label><br>
+			  <input name="regcbj" id="regcbj" value="<%= @associado.cbj_numero %>" type="text" />
+			</p>
+		    
+			<p>
+			  <label for="regfpj">Registro FPJ:</label><br>
+			  <input name="regfpj" id="regfpj" value="<%= @associado.fpj_numero %>" type="text" />
+			</p>     
+ 
+ 
+			<h4>Para menores de dezoito anos</h4>
+			<p>
+			  <label for="nomemae">M&atilde;e:</label><br>
+			  <input name="nomemae" id="nomemae" value="<%= @associado.maenome %>" type="text"  size="100" maxlength="100"  />
+			</p>
+		    
+			<p>
+			  <label for="nomepai">Pai:</label><br>
+			  <input name="nomepai" id="nomepai" value="<%= @associado.painome %>" type="text"  size="100" maxlength="100" />
+			</p>
+		     
+			<p>
+			  <label for="responsavelcpf">CPF M&atilde;e ou Pai:</label><br>
+			  <input name="responsavelcpf" id="responsavelcpf" value="<%= @associado.responsavelcpf %>" type="text" />
+			</p>
+
+			<p>
+			  <label for="responsavelrg">RG M&atilde;e ou Pai:</label><br>
+			  <input name="responsavelrg" id="responsavelrg" value="<%= @associado.responsavelrg %>" type="text" />
+			</p>
+		
+		
+		
+                    <p><input name="send" style="margin-left: 150px;" class="formbutton" value="OK" type="submit" /></p>
+                </form>
+
+</fieldset>
+
+            <p>&nbsp;</p>
+        </div>
+        
+        <div class="sidebar">
+            <ul>	
+            </ul> 
+        </div>
+    	<div class="clear"></div>
+    </div>
+    <%= render  "layouts/footer" %>
+</div>
+</body>
+</html>
+
